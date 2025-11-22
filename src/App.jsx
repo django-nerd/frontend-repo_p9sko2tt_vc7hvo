@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Series from './components/Series'
-import Positioning from './components/Positioning'
 import Technology from './components/Technology'
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
       <Navbar />
       <Hero />
       <Series />
-      <Positioning />
       <Technology />
 
       <footer id="contact" className="border-t border-black/5 bg-gray-50">

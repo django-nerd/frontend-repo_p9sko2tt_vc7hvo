@@ -1,5 +1,17 @@
 import { motion } from 'framer-motion'
 
+const heroImages = [
+  'https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1520975603465-7c2f8d0a9c0e?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1512203492609-8f7f06f1fbd7?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1516575150278-77136aed6920?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1511405889574-b01de1da5441?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1514416309827-bfb0f0b0f0e1?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1509622900787-e6a5375e5d37?q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1200&auto=format&fit=crop'
+]
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-28">
@@ -23,7 +35,7 @@ export default function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#series" className="px-5 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">Explore Series</a>
-              <a href="#positioning" className="px-5 py-3 rounded-full border border-gray-300 font-semibold hover:border-gray-900 transition-colors">Why NovaGaze</a>
+              <a href="#technology" className="px-5 py-3 rounded-full border border-gray-300 font-semibold hover:border-gray-900 transition-colors">Why NovaGaze</a>
             </div>
             <div className="mt-8 flex items-center gap-6 text-sm text-gray-600">
               <div>
@@ -44,10 +56,16 @@ export default function Hero() {
             className="relative"
           >
             <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-[2px] shadow-2xl">
-              <div className="w-full h-full rounded-3xl bg-white">
+              <div className="w-full h-full rounded-3xl overflow-hidden bg-white">
                 <div className="h-full w-full grid grid-cols-3 gap-2 p-2">
-                  {[...Array(9)].map((_, i) => (
-                    <div key={i} className="rounded-xl bg-gray-100" />
+                  {heroImages.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`NOVAGAZE eyewear ${i + 1}`}
+                      className="w-full h-full object-cover rounded-xl"
+                      loading="lazy"
+                    />
                   ))}
                 </div>
               </div>

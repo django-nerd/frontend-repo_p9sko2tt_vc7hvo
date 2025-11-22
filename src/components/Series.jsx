@@ -4,28 +4,28 @@ export default function Series() {
       name: "Lumen Series",
       desc: "Lightweight TR90 frames with blue-light lenses.",
       price: "₹1,999–₹3,499",
-      color: "from-blue-500/15",
+      img: "https://images.unsplash.com/photo-1516542076529-1ea3854896f4?q=80&w=1200&auto=format&fit=crop",
       points: ["Featherweight TR90", "Blue-light protection", "All-day comfort"],
     },
     {
       name: "Flux Series",
       desc: "Tint-adjusting lenses with titanium frames.",
       price: "₹4,999–₹7,999",
-      color: "from-purple-500/15",
+      img: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1200&auto=format&fit=crop",
       points: ["Photochromic lenses", "Titanium hardware", "Scratch-resistant"],
     },
     {
       name: "Street Series",
       desc: "Chunky, colorful, artist-collab designs.",
       price: "₹1,499–₹2,699",
-      color: "from-rose-500/15",
+      img: "https://images.unsplash.com/photo-1520975603465-7c2f8d0a9c0e?q=80&w=1200&auto=format&fit=crop",
       points: ["Bold silhouettes", "Limited collabs", "High pigment acetate"],
     },
     {
       name: "Kids Series",
       desc: "Flexible rubber frames with blue-light lenses.",
       price: "₹899–₹1,299",
-      color: "from-emerald-500/15",
+      img: "https://images.unsplash.com/photo-1490902931801-d6f80ca94fe1?q=80&w=1200&auto=format&fit=crop",
       points: ["Flexible + safe", "Blue-light lenses", "Play-proof"],
     },
   ]
@@ -38,13 +38,15 @@ export default function Series() {
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight">Product Series</h2>
             <p className="text-gray-600 mt-2">Expressive eyewear crafted for life online and off.</p>
           </div>
-          <a href="#" className="hidden sm:inline px-4 py-2 rounded-full bg-gray-900 text-white font-semibold hover:bg-blue-600 transition-colors">Notify me at launch</a>
+          <a href="#contact" className="hidden sm:inline px-4 py-2 rounded-full bg-gray-900 text-white font-semibold hover:bg-blue-600 transition-colors">Notify me at launch</a>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {series.map((s) => (
-            <div key={s.name} className="group rounded-2xl border border-black/5 bg-gradient-to-b from-transparent to-white p-5 hover:shadow-xl transition-all">
-              <div className={`h-40 rounded-xl bg-gradient-to-br ${s.color} to-white border border-black/5 mb-4`} />
+            <div key={s.name} className="group rounded-2xl border border-black/5 bg-white p-5 hover:shadow-xl transition-all">
+              <div className="h-40 rounded-xl overflow-hidden border border-black/5 mb-4">
+                <img src={s.img} alt={`${s.name} eyewear`} className="w-full h-full object-cover" loading="lazy" />
+              </div>
               <div className="flex items-center justify-between">
                 <h3 className="font-bold text-lg">{s.name}</h3>
                 <span className="text-xs px-2 py-1 rounded-full bg-black text-white">{s.price}</span>
